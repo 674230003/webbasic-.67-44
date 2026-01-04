@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 04: Various Links</title>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            width: 400px; 
+            padding: 40px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 { text-align: center; color: #d81b60; margin-bottom: 5px; }
+        .sub-title { text-align: center; color: #666; font-size: 14px; margin-bottom: 30px; }
+        .section { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; }
+        .section h3 { margin-top: 0; color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+        .external-sub-box { border: 1px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-bottom: 15px; background-color: #fff; }
+        .external-sub-box a { display: block; color: #4a4ae2; font-weight: bold; text-decoration: none; margin-bottom: 8px; font-size: 15px; }
+        .code-inline-container { display: flex; align-items: center; gap: 10px; }
+        .code-label { background-color: #f4f4f4; padding: 4px 10px; border-radius: 4px; font-family: monospace; font-size: 13px; color: #555; border: 1px solid #ddd; }
+        
+        pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #ff0000; font-size: 13px; color: #e83e8c; overflow-x: auto; }
+
+        .back-link-container { text-align: left; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+        .back-link { color: #666; text-decoration: none; font-weight: bold; font-size: 16px; }
+        .back-link:hover { color: #d81b60; text-decoration: underline; }
+
+        .btn-web { display: inline-block; padding: 10px 20px; background-color: #4c4cc7; color: white; border-radius: 5px; font-weight: bold; }
+        .btn-download { background-color: #ffc107; color: black; padding: 8px 15px; border-radius: 4px; font-weight: bold; }
+        
+        .img-link img { width: 150px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Workshop: Various Links</h1>
+    <p class="sub-title">เรียนรู้ลิงก์หลายรูปแบบ พร้อมตัวอย่างและแบบฝึกหัด</p>
+
+    <div class="section" style="border-top: 5px solid #d81b60;">
+        <h3>1. External Links</h3>
+        <div class="external-sub-box">
+            <a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a>
+            <div class="code-inline-container"><span class="code-label">target="_blank"</span> <span class="code-desc">เปิดลิงก์ในแท็บใหม่</span></div>
+        </div>
+        <div class="external-sub-box">
+            <a href="https://www.google.com" target="_self">Visit Google</a>
+            <div class="code-inline-container"><span class="code-label">target="_self"</span> <span class="code-desc">เปิดลิงก์ในหน้าต่างเดิม</span></div>
+        </div>
+        <div class="external-sub-box">
+            <a href="https://www.facebook.com" target="_blank">Visit Facebook</a>
+            <div class="code-inline-container"><span class="code-label">target="_blank"</span> <span class="code-desc">เปิดหน้า Facebook ในแท็บใหม่</span></div>
+        </div>
+        <div class="external-sub-box">
+            <a href="https://www.youtube.com" target="_blank">Visit YouTube</a>
+            <div class="code-inline-container"><span class="code-label">target="_blank"</span> <span class="code-desc">เปิดหน้า YouTube ในแท็บใหม่</span></div>
+        </div>
+    </div>
+
+    <div class="section" style="border-top: 5px solid #03a9f4;">
+        <h3>2. Internal Links & Anchor Links</h3>
+        <pre>&lt;a href="about.html"&gt;AboutUs&lt;/a&gt;
+&lt;a href="#jump"&gt;Jump to Section&lt;/a&gt;
+&lt;h3 id="jump"&gt;This is the jump target&lt;/h3&gt;</pre>
+        <p><a href="#jump" style="color:#007bff">Click to jump</a></p>
+        <p id="jump">This is the jump target area.</p>
+    </div>
+
+    <div class="section" style="border-top: 5px solid #4caf50;">
+        <h3>3. Email Links</h3>
+        <pre>&lt;a href="mailto:student@npru.ac.th"&gt;Send Email&lt;/a&gt;</pre>
+        <p><a href="mailto:student@npru.ac.th" style="color:#007bff">Send an Email</a></p>
+    </div>
+
+    <div class="section" style="border-top: 5px solid #ff9800;">
+        <h3>4. Download Links</h3>
+        <pre>&lt;a href="file.pdf" download&gt;Download PDF&lt;/a&gt;</pre>
+        <a href="#" class="btn-download">Download Test File</a>
+    </div>
+
+    <div class="section" style="border-top: 5px solid #9c27b0;">
+        <h3>5. Button Link</h3>
+        <p style="font-size: 14px; color: #666;">ลิงก์ที่ออกแบบมาให้คล้ายปุ่ม เหมาะกับปุ่มสมัครสมาชิก ปุ่มอ่านเพิ่มเติม หรือปุ่มนำทาง</p>
+        
+        <pre>&lt;a href="https://www.example.com" class="btn-link"&gt;
+   Visit Website
+&lt;/a&gt;</pre>
+        
+        <p><a href="https://www.npru.ac.th" class="btn-web" target="_blank">Visit Website</a></p>
+
+        <p style="font-size: 14px; color: #666; margin-top: 20px;">สร้างปุ่มด้วยแท็ก button</p>
+        <pre>&lt;button onclick="document.location='index.html'"&gt;HTML Tutorial&lt;/button&gt;
+  - มักใช้เมื่อลิงก์ไปยังบทเรียนเดียวกัน
+  - ผูกกับ DOM (document) โดยตรง
+
+&lt;button onclick="location.href='https://www.example.com'"&gt;Visit Website&lt;/button&gt;
+  - นิยมใช้มากกว่า
+  - เหมาะทั้งลิงก์ภายในและภายนอกเว็บ
+  - ผูกกับ window โดยตรง</pre>
+
+        <div style="margin-top: 15px;">
+            <button onclick="document.location='index.html'" style="cursor:pointer; padding: 5px 10px;">HTML Tutorial</button>
+            <button onclick="location.href='https://www.npru.ac.th'" style="cursor:pointer; padding: 5px 10px;">Visit Website</button>
+        </div>
+    </div>
+
+    <div class="section" style="border-top: 5px solid #795548;">
+        <h3>6. Image Link</h3>
+        <pre>&lt;a href="https://youtube.com"&gt;
+  &lt;img src="images/sample.jpg" width="250"&gt;
+&lt;/a&gt;</pre>
+        <div class="img-link">
+            <a href="https://www.youtube.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" style="width: 150px;">
+            </a>
+        </div>
+    </div>
+
+    <div class="back-link-container">
+        <a href="index.html" class="back-link">← Back to Tutorial</a>
+    </div>
+
+</div>
+
+</body>
+</html>
