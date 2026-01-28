@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<title>Grade Report</title>
+    <style>
+:root {
+    --primary-color: #2563eb;    /* สีน้ำเงินหลัก */
+    --secondary-color: #64748b;  /* สีเทา */
+    --accent-color: #f59e0b;     /* สีทองสำหรับ GPAX */
+    --bg-color: #f8fafc;         /* สีพื้นหลังเว็บ */
+    --card-bg: #ffffff;          /* สีพื้นหลังการ์ด */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: var(--bg-color);
+    color: #1e293b;
+    padding: 20px;
+}
+
+.main-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Header Section (Flexbox) --- */
+.profile-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+    color: white;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    object-fit: cover;
+}
+
+.name { font-size: 1.8rem; margin-bottom: 5px; }
+.id, .group { opacity: 0.9; font-weight: 300; }
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* --- Grade Section (Grid) --- */
+.title-label {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.grade-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card h3 { font-size: 0.9rem; color: var(--secondary-color); margin-bottom: 10px; }
+.gpa-value { font-size: 2rem; font-weight: bold; color: var(--primary-color); }
+
+.card.highlight {
+    background: #fffbeb;
+    border: 2px solid var(--accent-color);
+}
+.gpax-value { font-size: 2.5rem; font-weight: bold; color: #b45309; }
+
+/* --- Footer Section --- */
+.contact-footer {
+    margin-top: 40px;
+}
+
+.contact-card {
+    background: #1e293b;
+    color: white;
+    padding: 30px;
+    border-radius: 24px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.contact-item span { color: #94a3b8; font-size: 0.85rem; }
+.contact-item p { font-size: 1rem; }
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Report</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header class="profile-header">
+            <div class="avatar-container">
+                <img src="https://via.placeholder.com/150" alt="รูปถ่ายนักศึกษา" class="profile-img">
+            </div>
+            <div class="profile-info">
+                <h1 class="name">นาย ธนภัทร ลิ้มสกุล</h1>
+                <p class="id">รหัสนักศึกษา: <strong>674230003</strong></p>
+                <p class="group">หมู่เรียน: <strong>67/44</strong></p>
+                <div class="badge">นักศึกษาภาคปกติ</div>
+            </div>
+        </header>
+
+        <section class="grade-section">
+            <h2 class="title-label">ผลการเรียนรายภาคเรียน</h2>
+            <div class="grade-grid">
+                <div class="card">
+                    <h3>ปี 1 เทอม 1</h3>
+                    <div class="gpa-value">2.00</div>
+                </div>
+                <div class="card">
+                    <h3>ปี 1 เทอม 2</h3>
+                    <div class="gpa-value">2.41</div>
+                </div>
+                <div class="card">
+                    <h3>ปี 2 เทอม 1</h3>
+                    <div class="gpa-value">2.61</div>
+                </div>
+                <div class="card highlight">
+                    <h3>เกรดเฉลี่ยสะสม (GPAX)</h3>
+                    <div class="gpax-value">3.00</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="contact-footer">
+            <div class="contact-card">
+                <h3>สถานที่ติดต่อ & ช่องทางออนไลน์</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span>📍 ที่อยู่:</span>
+                        <p> มหาวิทยาลัยราชภัฏนครปฐม ถ.มาลัยแมน</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧 อีเมล:</span>
+                        <p>674230003@Webmail.npru.ac.th</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱 Social:</span>
+                        <p>FB: Thanaphat Limsakul/ Line: @Boat</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
